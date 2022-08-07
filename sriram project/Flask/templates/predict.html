@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body
+        {
+        background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_920777500_410710.jpg");
+        background-size: cover;
+        }
+        h3.big
+        {
+        line-height: 1.8;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap');
+
+body {
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+	background-color:#f7f7f7;
+}
+* {box-sizing: border-box}
+
+/* Add padding to container elements */
+.container {
+    padding: 20px;
+      width:500px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+      border:1px solid #ccc;
+      border-radius:10px;
+      background:white;
+  -webkit-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  -moz-box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  box-shadow: 2px 1px 21px -9px rgba(0,0,0,0.38);
+  }
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+}
+
+input[type=phone] {
+  width: 81%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f7f7f7;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=phone]:focus, select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #f40e0e;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+	font-size:16px;
+	font-family: Montserrat,Arial, Helvetica, sans-serif;
+	border-radius:10px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+/* Change styles for signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+     width: 100%;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">Employee Promotion Prediction Using ML</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li class="active"><a href="/predict">Predict</a></li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <form action="/pred", method="post" >
+        <div class="container">
+         
+          
+      
+              
+          <label for="department"></label>
+               
+          <select  name="department" id="department"  required="required">
+            <option value="">Select Department</option>  
+            <option value="1">Sales & Marketing</option>
+              <option value="2">Operations</option>
+              <option value="3">Technology</option>
+              <option value="4">Analytics</option>
+              <option value="5">Research & Development</option>
+              <option value="6">Procurement</option>
+              <option value="7">Finance</option>
+              <option value="8">Human Resource</option>
+              <option value="9">Legal</option>
+               
+            </select>
+
+
+
+            
+        
+        <select  id="education" name="education">
+          
+            <option value="">Select Education</option>
+              <option value="1">Below Secondary</option>
+          <option value="2">Bachelor's</option>
+            <option value="3">Master's & above</option>
+        </select>
+      
+          
+               <input type="text"  name="no_of_trainings" id="no_of_trainings"  required="required" placeholder="No of Trainings"/>
+               <input type="text"  name="age" id="age" required="required" placeholder="Age"/>
+               <input type="text"  name="previous_year_rating" id="previous_year_rating" required="required" placeholder="Previous Year Rating"/>
+               <input type="text"  name="length_of_service" id="length_of_service"  required="required" placeholder="Length of Service"/>
+               <select  id="KPIs" name="KPIs">
+                
+                <option value="">Key performance indicators_met >80%</option>
+                <option value="1">YES, It's over 80%</option>
+                <option value="0">NO,Tt's Below 80%</option>
+              </select>
+              <select  id="awards_won" name="awards_won">
+                <option value="">Awards Won</option>
+                <option value="1">YES, I Have Won</option>
+                <option value="0">NO,I Havent</option>
+              </select>
+              <input type="text"  name="avg_training_score" id="avg_training_score"  required="required" placeholder="Average Training Score"/>
+              <button type="submit" class="btn">Predict</button>
+              <div class="clearfix">
+      
+            
+          </div>
+        </div>
+      </form>
+
+  
+
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
